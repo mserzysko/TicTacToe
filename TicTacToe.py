@@ -19,8 +19,28 @@ def board(boardvalues):
 
 print('Welcome to Tic Tac Toe!')
 print('Our board looks like this:')
+
 print('1'+'|'+'2'+'|'+'3')
 print('-'+ '|' + '-' + '|' + '-')
 print('4'+'|'+'5'+'|'+'6')
 print('-'+ '|' + '-' + '|' + '-')
 print('7'+'|'+'8'+'|'+'9')
+
+print('Insert number representing a cell in order to choose that cell')
+
+
+def player_marker():
+    '''Should choose markers for the players'''
+
+    player1 = ''
+    player2 = ''
+
+    while player1 != 'X' and player1 != 'O':
+        player1 = input('Player1, choose "X" or "O": ')
+
+    if player1 == 'X':
+        player2 = 'O'
+    else:
+        player2 = 'X'
+
+    print(f'Player1 is {player1}, player2 is {player2}')
