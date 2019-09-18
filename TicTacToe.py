@@ -71,6 +71,7 @@ def check_if_win():
 winner=''
 player=True
 while not winner:
+    check_if_win()
 
     if player:
         ind=int(input('Player1: '))
@@ -80,14 +81,15 @@ while not winner:
         board(boardvalues)
 
         check_if_win()
-
+# if check_if_win nie ma po tych if-ach to się zawiesza z jakiegoś powodu
     else:
         ind = int(input('Player2: '))
         boardvalues[ind] = player2
         player = not player
 
         board(boardvalues)
-
         check_if_win()
 
-# Działa! Ale nie działa sprawdzanie czy jest wygrana i są podwójne tablice
+
+# Działa! Ale nie działa sprawdzanie czy jest wygrana
+# można nadpisywać numerki: trzeba to ukrócić
