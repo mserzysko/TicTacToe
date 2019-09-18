@@ -2,16 +2,16 @@
 # wins=  1,2,3   4,5,6    7,8,9   1,5,9   3,5,7    1,4,7   2,5,8    3,6,9
 
 
-boardvalues = ['']*10
+boardvalues = [' ']*10
 wins=[(1,2,3), (4,5,6), (7,8,9), (1,5,9), (3,5,7), (1,4,7), (2,5,8), (3,6,9)]
 
 
 def board(boardvalues):
     ''' Prints our board '''
     print(boardvalues[1]+'|'+boardvalues[2]+'|'+boardvalues[3])
-    print('_'+ '|' + '_' + '|' + '_')
+    print('-'+ '|' + '-' + '|' + '-')
     print(boardvalues[4]+'|'+boardvalues[5]+'|'+boardvalues[6])
-    print('_' + '|' + '_' + '|' + '_')
+    print('-' + '|' + '-' + '|' + '-')
     print(boardvalues[7]+'|'+boardvalues[8]+'|'+boardvalues[9])
 
 
@@ -51,9 +51,9 @@ print('Player1: start!')
 
 def check_if_win():
     for a, b, c in wins:
-        if a=b=c:
+        if a==b==c:
             # I am not sure yet how to determine who won the game player 1 or 2: go back to it: i chyba bedzie z if
-            if a='O':
+            if a=='O':
                 winner = 'O won!'
                 break
             else:
@@ -67,7 +67,7 @@ player=True
 while not winner:
     board(boardvalues)
 
-    if player1:
+    if player:
         #nie jestem pewna, czy nie trzeba bedize zrobic z tego intigera jeszcze
         ind=input('Player1: ')
         boardvalues[ind]=player1
