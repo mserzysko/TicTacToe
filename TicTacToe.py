@@ -3,19 +3,21 @@
 #make players choose X or O
 # game itself plus checking if somebody did not won
 
-# wins   1,2,3   4,5,6    7,8,9   1,5,9   3,5,7    1,4,7   2,5,8    3,6,9
+# wins=  1,2,3   4,5,6    7,8,9   1,5,9   3,5,7    1,4,7   2,5,8    3,6,9
 
 
+boardvalues = ['']*10
+wins=[(1,2,3), (4,5,6), (7,8,9), (1,5,9), (3,5,7), (1,4,7), (2,5,8), (3,6,9)]
 
-boardvalues=['']*10
 
 def board(boardvalues):
-    '''prints our board'''
+    ''' Prints our board '''
     print(boardvalues[1]+'|'+boardvalues[2]+'|'+boardvalues[3])
     print('_'+ '|' + '_' + '|' + '_')
     print(boardvalues[4]+'|'+boardvalues[5]+'|'+boardvalues[6])
     print('_' + '|' + '_' + '|' + '_')
     print(boardvalues[7]+'|'+boardvalues[8]+'|'+boardvalues[9])
+
 
 print('Welcome to Tic Tac Toe!')
 print('Our board looks like this:')
@@ -27,6 +29,7 @@ print('-'+ '|' + '-' + '|' + '-')
 print('7'+'|'+'8'+'|'+'9')
 
 print('Insert number representing a cell in order to choose that cell')
+print("Ready? Let's play!")
 
 
 def player_marker():
@@ -44,3 +47,29 @@ def player_marker():
         player2 = 'X'
 
     print(f'Player1 is {player1}, player2 is {player2}')
+
+
+player_marker()
+print('Player1: start!')
+
+
+
+winner=''
+while not winner:
+    for a,b,c in wins:
+        if a=b=c:
+            # potem coś zrób, żeby pisał, kto wygrał grę
+            winner='you won the game!'
+
+
+
+
+
+    #najpioerw sprawdzamy czy jest wygrana: czy w następujących punktach są O a potem czy w tych punktach są X
+
+    #potem pytamy sie o wprowadzenie liczmy i wprowadzamy ją na miejsce
+
+
+
+
+    break
