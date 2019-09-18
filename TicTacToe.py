@@ -1,8 +1,4 @@
 
-#Create a board and a table of 'moves'
-#make players choose X or O
-# game itself plus checking if somebody did not won
-
 # wins=  1,2,3   4,5,6    7,8,9   1,5,9   3,5,7    1,4,7   2,5,8    3,6,9
 
 
@@ -56,7 +52,7 @@ print('Player1: start!')
 def check_if_win():
     for a, b, c in wins:
         if a=b=c:
-            # I am not sure yet how to determine who won the game: go back to it
+            # I am not sure yet how to determine who won the game player 1 or 2: go back to it: i chyba bedzie z if
             if a='O':
                 winner = 'O won!'
                 break
@@ -67,17 +63,35 @@ def check_if_win():
             continue
 
 winner=''
-player1=
+player=True
 while not winner:
     board(boardvalues)
+
+    if player1:
+        #nie jestem pewna, czy nie trzeba bedize zrobic z tego intigera jeszcze
+        ind=input('Player1: ')
+        boardvalues[ind]=player1
+        player=not player
+
+        board(boardvalues)
+
+        check_if_win()
+
+    else:
+        ind = input('Player2: ')
+        boardvalues[ind] = player2
+        player = not player
+
+        board(boardvalues)
+
+        check_if_win()
+
 
 
 
     # player1: insert, apply to the boardvalues, check if win, change player, player 2: insert....
 
-    board(boardvalues)
 
-    check_if_win()
 
 
     # jak zrobić wkładanie do boardvalues
