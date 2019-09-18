@@ -53,6 +53,7 @@ print('Player1: start!')
 
 
 def check_if_win():
+    # TO PRZECIEZ NIE MOZE DIZALAC JAK NIE SPRAWDZA W BORDERVALUES!!! NAPRAWIC
     for a, b, c in wins:
         if a=='X' or a=='O':
             if a==b==c:
