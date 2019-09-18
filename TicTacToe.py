@@ -31,6 +31,9 @@ print("Ready? Let's play!")
 def player_marker():
     '''Should choose markers for the players'''
 
+    global player1
+    global player2
+
     player1 = ''
     player2 = ''
 
@@ -51,14 +54,17 @@ print('Player1: start!')
 
 def check_if_win():
     for a, b, c in wins:
-        if a==b==c:
-            # I am not sure yet how to determine who won the game player 1 or 2: go back to it: i chyba bedzie z if
-            if a=='O':
-                winner = 'O won!'
-                break
+        if a=='X' or a=='O':
+            if a==b==c:
+                # I am not sure yet how to determine who won the game player 1 or 2: go back to it: i chyba bedzie z if
+                if a=='O':
+                    winner = 'O won!'
+                    break
+                else:
+                    winner = 'X won!'
+                    break
             else:
-                winner = 'X won!'
-                break
+                continue
         else:
             continue
 
@@ -68,8 +74,7 @@ while not winner:
     board(boardvalues)
 
     if player:
-        #nie jestem pewna, czy nie trzeba bedize zrobic z tego intigera jeszcze
-        ind=input('Player1: ')
+        ind=int(input('Player1: '))
         boardvalues[ind]=player1
         player=not player
 
@@ -78,7 +83,7 @@ while not winner:
         check_if_win()
 
     else:
-        ind = input('Player2: ')
+        ind = int(input('Player2: '))
         boardvalues[ind] = player2
         player = not player
 
