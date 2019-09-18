@@ -71,7 +71,6 @@ def check_if_win():
 winner=''
 player=True
 while not winner:
-    board(boardvalues)
 
     if player:
         ind=int(input('Player1: '))
@@ -91,23 +90,4 @@ while not winner:
 
         check_if_win()
 
-
-
-
-    # player1: insert, apply to the boardvalues, check if win, change player, player 2: insert....
-
-
-
-
-    # jak zrobić wkładanie do boardvalues
-
-    # mogę zrobi ć naprzemiennie: zmieniać kto gra in tak wpisywać czy wygrana, czy nie!
-
-
-
-    #potem pytamy sie o wprowadzenie liczmy i wprowadzamy ją na miejsce
-
-
-
-
-    break
+# Działa! Ale nie działa sprawdzanie czy jest wygrana i są podwójne tablice
