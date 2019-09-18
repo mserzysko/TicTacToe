@@ -53,19 +53,38 @@ player_marker()
 print('Player1: start!')
 
 
+def check_if_win():
+    for a, b, c in wins:
+        if a=b=c:
+            # I am not sure yet how to determine who won the game: go back to it
+            if a='O':
+                winner = 'O won!'
+                break
+            else:
+                winner = 'X won!'
+                break
+        else:
+            continue
 
 winner=''
+player1=
 while not winner:
-    for a,b,c in wins:
-        if a=b=c:
-            # potem coś zrób, żeby pisał, kto wygrał grę
-            winner='you won the game!'
+    board(boardvalues)
 
 
 
+    # player1: insert, apply to the boardvalues, check if win, change player, player 2: insert....
+
+    board(boardvalues)
+
+    check_if_win()
 
 
-    #najpioerw sprawdzamy czy jest wygrana: czy w następujących punktach są O a potem czy w tych punktach są X
+    # jak zrobić wkładanie do boardvalues
+
+    # mogę zrobi ć naprzemiennie: zmieniać kto gra in tak wpisywać czy wygrana, czy nie!
+
+
 
     #potem pytamy sie o wprowadzenie liczmy i wprowadzamy ją na miejsce
 
