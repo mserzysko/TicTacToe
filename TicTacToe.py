@@ -1,5 +1,4 @@
 
-# wins=  1,2,3   4,5,6    7,8,9   1,5,9   3,5,7    1,4,7   2,5,8    3,6,9
 
 
 boardvalues = [' ']*10
@@ -55,8 +54,10 @@ print('Player1: start!')
 def check_if_win():
     # TO PRZECIEZ NIE MOZE DIZALAC JAK NIE SPRAWDZA W BORDERVALUES!!! NAPRAWIC
     for a, b, c in wins:
+        # to ui góry dobrze: a,b,c bierze kóre indeksy ma wziąć z board values potrzeba tylko porównać win z boardvalues
+
         if a=='X' or a=='O':
-            if a==b==c:
+            if boardvalues[a]==boardvalues[b]==boardvalues[c]:
                 # I am not sure yet how to determine who won the game player 1 or 2: go back to it: i chyba bedzie z if
                 if a=='O':
                     winner = 'O won!'
@@ -72,7 +73,7 @@ def check_if_win():
 winner=''
 player=True
 while not winner:
-    check_if_win()
+    check_if_win()X
 
     if player:
         ind=int(input('Player1: '))
