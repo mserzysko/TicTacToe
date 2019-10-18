@@ -52,28 +52,29 @@ print('Player1: start!')
 
 
 def check_if_win():
-    # TO PRZECIEZ NIE MOZE DIZALAC JAK NIE SPRAWDZA W BORDERVALUES!!! NAPRAWIC
-    for a, b, c in wins:
-        # to ui góry dobrze: a,b,c bierze kóre indeksy ma wziąć z board values potrzeba tylko porównać win z boardvalues
 
-        if a=='X' or a=='O':
-            if boardvalues[a]==boardvalues[b]==boardvalues[c]:
-                # I am not sure yet how to determine who won the game player 1 or 2: go back to it: i chyba bedzie z if
-                if a=='O':
-                    winner = 'O won!'
-                    break
-                else:
-                    winner = 'X won!'
-                    break
+    for a, b, c in wins:
+        global winner
+        players='XO'
+
+        if boardvalues[a]==boardvalues[b]==boardvalues[c] and a in players:
+            #wszystko działą, ALE boardvalues wszsytkie sa 0 wiec zawsze powyzszy warunek spelniony, dopiero dziala jak na koncu jest X a X wygrywa
+            #mozna zrobic ewentualknie liste graczy i X i O i czy boardvalues a in this: tu problem: a przed zmiana jest intigerem
+
+            # I am not sure yet how to determine who won the game player 1 or 2: go back to it: i chyba bedzie z if
+            if boardvalues[a]=='O':
+                winner = 'O won!'
+                break
             else:
-                continue
+                winner = 'X won!'
+                break
         else:
             continue
 
 winner=''
 player=True
 while not winner:
-    check_if_win()X
+    check_if_win()
 
     if player:
         ind=int(input('Player1: '))
