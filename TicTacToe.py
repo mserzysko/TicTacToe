@@ -55,13 +55,15 @@ def check_if_win():
 
     for a, b, c in wins:
         global winner
-        players='XO'
+        players='X'
 
-        if boardvalues[a]==boardvalues[b]==boardvalues[c] and a in players:
+        if boardvalues[a]==boardvalues[b]==boardvalues[c] and str(a) in players:
             #wszystko działą, ALE boardvalues wszsytkie sa 0 wiec zawsze powyzszy warunek spelniony, dopiero dziala jak na koncu jest X a X wygrywa
-            #mozna zrobic ewentualknie liste graczy i X i O i czy boardvalues a in this: tu problem: a przed zmiana jest intigerem
+            #mozna zrobic ewentualknie liste graczy i X i O i czy boardvalues a: ale nie pomoglo i znow nie wychodzi
 
             # I am not sure yet how to determine who won the game player 1 or 2: go back to it: i chyba bedzie z if
+
+            # Idea form Pawel: do two lists with choices of Player1 and Player2: you can compare them with wins and also it will easily determine who won! YUPI!
             if boardvalues[a]=='O':
                 winner = 'O won!'
                 break
