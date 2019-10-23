@@ -53,21 +53,20 @@ print('Player1: start!')
 
 def check_if_win():
     global winner
-    #mam wrazenie ze cos jest nie tak z tym for a, b, c in wins
-    for a, b, c in wins:
+    #mam wrazenie ze cos jest nie tak z tym for a, b, c in wins. albo moze podrukowac co jest w tych pal
 
-        if len(pla1)<2:
-            for a, b, c in wins:
-                if a in pla1 and b in pla1 and c in pla1:
-                    winner=player1
-                    print('Player1 won!')
-                    break
-                elif a in pla2 and b in pla2 and c in pla2:
-                    winner=player2
-                    print('Player2 won!')
-                    break
-                else:
-                    continue
+    if len(pla1)<2:
+        for a, b, c in wins:
+            if a in pla1 and b in pla1 and c in pla1:
+                winner=player1
+                print('Player1 won!')
+                break
+            elif a in pla2 and b in pla2 and c in pla2:
+                winner=player2
+                print('Player2 won!')
+                 break
+            else:
+                continue
 
 
 
