@@ -101,6 +101,8 @@ while not winner:
 
         if ind in pla1 or ind in pla2:
             print('Place occupied! Try again!')
+        elif ind>9 or ind<1:
+            print('Oh come on! Board is smaller. Try again!')
         else:
             boardvalues[ind] = player1
             pla1.append(ind)
@@ -113,6 +115,8 @@ while not winner:
 
         if ind in pla1 or ind in pla2:
             print('Place occupied! Try again!')
+        elif ind>9 or ind<1:
+            print('Oh come on! Board is smaller. Try again!')
         else:
             boardvalues[ind] = player2
             pla2.append(ind)
