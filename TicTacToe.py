@@ -1,5 +1,11 @@
 boardvalues = [' ']*10
 wins=[(1,2,3), (4,5,6), (7,8,9), (1,5,9), (3,5,7), (1,4,7), (2,5,8), (3,6,9)]
+pla1_win=0
+pla2_win=0
+
+#trzeba jeszcze zapytać czy gracz chce grać raz jeszcze i jakoś kontrolować ile jest wygranych
+#poprawić ten ties
+
 
 print('Welcome to Tic Tac Toe!')
 print('Our board looks like this:')
@@ -45,20 +51,44 @@ print('Player1: start!')
 
 def check_if_win():
     global winner
+    global pla1_win
+    global pla2_win
+    if len(pla1)==5:
+        print('Ties!')
+        winner='Player1 and Player2'
     if len(pla1)>2:
         for a, b, c in wins:
             if a in pla1 and b in pla1 and c in pla1:
                 winner=player1
                 print('Player1 won!')
+                pla1_win+=1
+                if_play_again()
                 break
             elif a in pla2 and b in pla2 and c in pla2:
                 winner=player2
                 print('Player2 won!')
+                pla2_win+=1
+                if_play_again()
                 break
             else:
                 continue
 
-
+def if_play_again():
+    '''cleans out the board and starts the game again'''
+    play_again=input('Do you want to play again? Yes/No: ')
+    if play_again.lower()=='yes':
+        global boardvalues
+        global pla1
+        global pla2
+        global winner
+        global player
+        boardvalues = [' '] * 10
+        pla1 = []
+        pla2 = []
+        winner = ''
+        player = True
+    else:
+        pass
 
 pla1=[]
 pla2=[]
@@ -92,3 +122,4 @@ while not winner:
 
 
 
+print(f'Player1 won {pla1_win} games and Player2 won {pla2_win} games')
