@@ -69,31 +69,26 @@ while not winner:
     if player:
         ind=int(input('Player1: '))
 
-        #
+        if ind in pla1 or ind in pla2:
+            print('Place occupied! Try again!')
+        else:
+            boardvalues[ind] = player1
+            pla1.append(ind)
+            player = not player
+            board(boardvalues)
+            check_if_win()
 
-        if pla1!=[]:
-            if ind in pla1 or ind in pla2:
-                print('Place occupied! Try again!')
-                break
-            else:
-                continue
-
-        boardvalues[ind]=player1
-        pla1.append(ind)
-        player=not player
-        board(boardvalues)
-        check_if_win()
     else:
         ind=int(input('Player2: '))
 
+        if ind in pla1 or ind in pla2:
+            print('Place occupied! Try again!')
+        else:
+            boardvalues[ind] = player2
+            pla2.append(ind)
+            player = not player
+            board(boardvalues)
+            check_if_win()
 
 
-        boardvalues[ind] = player2
-        pla2.append(ind)
-        player = not player
-        board(boardvalues)
-        check_if_win()
 
-
-
-# można nadpisywać numerki: trzeba to ukrócić
