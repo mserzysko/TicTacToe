@@ -3,7 +3,6 @@ wins=[(1,2,3), (4,5,6), (7,8,9), (1,5,9), (3,5,7), (1,4,7), (2,5,8), (3,6,9)]
 pla1_win=0
 pla2_win=0
 
-#trzeba jeszcze zapytać czy gracz chce grać raz jeszcze i jakoś kontrolować ile jest wygranych
 #poprawić ten ties
 
 
