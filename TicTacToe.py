@@ -65,7 +65,7 @@ def check_if_win():
                 pla2_win+=1
                 if_play_again()
             elif len(pla1) == 5:
-               if winner=='':
+                if winner=='':
                    print('Ties!')
                    winner = 'Player1 and Player2'
                    ties += 1
