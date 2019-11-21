@@ -34,7 +34,7 @@ def player_marker():
     player2 = ''
 
     while player1 != 'X' and player1 != 'O':
-        player1 = input('Player1, choose "X" or "O": ')
+        player1 = input('Player1, choose "X" or "O": ').upper()
 
     if player1 == 'X':
         player2 = 'O'
